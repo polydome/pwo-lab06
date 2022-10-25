@@ -6,10 +6,20 @@ import pwo.utils.SequenceTools;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Paths;
 
+/**
+ * Klasa zapisująca ciąg w pliku.
+ */
 class SeqToFileApp {
     protected SeqType seqType = null;
     protected Integer from = null, to = null;
     protected String fileName = null;
+
+    /**
+     * Odczytuje dane z argumentów
+     *
+     * @param args Argumenty przekazane do programu
+     * @return wartość określającą czy argumenty są poprawne
+     */
     protected boolean getArgs(String[] args) {
         try {
             seqType = SeqType.fromString(args[0]);
@@ -22,10 +32,20 @@ class SeqToFileApp {
         catch (InvalidPathException ex) { return false; }
         return seqType != null && from >= 0 && to >= 0;
     }
+
+    /**
+     * Zapisuje sekwencje w pliku
+     * @return <code>true</code> jeżeli udało się zapisać, w przeciwnym razie <code>false</code>.
+     */
     protected boolean wirteSeq() {
         return SequenceTools.writeToFile(seqType.getGenerator(),
                 from, to, fileName);
     }
+
+    /**
+     * Wykonuje operacje na podstawie argumentów
+     * @param args Argumenty przekazane do programu
+     */
     public void run(String[] args) {
         System.out.println("Sequence to file CLI app");
         if (!getArgs(args)) {

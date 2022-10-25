@@ -2,6 +2,9 @@ package pwo.seq;
 
 import java.math.BigDecimal;
 
+/**
+ * Generuje kolejne elementy ciągu Lucasa
+ */
 public class LucasGenerator extends FibonacciGenerator {
     public LucasGenerator() {
         current = new BigDecimal(2);

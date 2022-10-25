@@ -4,6 +4,9 @@ import pwo.utils.SequenceGenerator;
 
 import java.math.BigDecimal;
 
+/**
+ * Obsługuje optymalne generowanie ciągów
+ */
 abstract class Generator implements SequenceGenerator {
     protected int lastIndex = 0;
     protected BigDecimal
@@ -12,6 +15,9 @@ abstract class Generator implements SequenceGenerator {
             f_2 = null,
             f_3 = null;
 
+    /**
+     * Resetuje stan licznika
+     */
     @Override
     public void reset() {
         lastIndex = 0;

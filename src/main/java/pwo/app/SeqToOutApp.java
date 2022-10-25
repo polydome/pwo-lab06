@@ -2,6 +2,9 @@ package pwo.app;
 
 import pwo.utils.SequenceTools;
 
+/**
+ * Zapisuje ciąg do standardowego wyjścia.
+ */
 public class SeqToOutApp extends SeqToFileApp {
     @Override
     protected boolean getArgs(String[] args) {

@@ -2,6 +2,9 @@ package pwo.seq;
 
 import java.math.BigDecimal;
 
+/**
+ * Generuje kolejne elementy ciągu Tribonacciego
+ */
 public class TribonacciGenerator extends FibonacciGenerator {
     public TribonacciGenerator() {
         f_3 = new BigDecimal(0);
